@@ -216,3 +216,78 @@ O carro está indo o mais rápido possível!
 A velocidade máxima é: 200
 ```
 
+## Constructors(Construtores)
+
+Um construtor em java é basicamente um método especial que é utilizado para inicializar objetos. O construtor é chamado quando o objeto da classe é criado. Além disso, ele pode ser usado para definir valores iniciais para atributos de objetos.
+
+```java
+public class Main {
+    // Criamos um atributo da classe Main.
+    int x;
+
+    // Criamos um construtor de classe para a classe Main.
+    public Main() {
+        // Definimos o valor inicial para o atributo da classe Main.
+        x = 5;
+    }
+
+    public static void main(String[] args) {
+        // Criamos um objeto da classe Main, isso resultará na chamada do construtor.
+        Main myObject = new Main();
+        // Exibe 5 na tela.
+        System.out.println(myObject.x);
+    }
+}
+
+```
+
+Ou seja, no exemplo acima o construtor irá inicializar o atributo x da classe Main, que terá valor 5. O construtor é sempre chamado quando criamos um objeto.
+
+NOTA: O nome do construtor deve ser igual ao nome da Classe, nesse caso ambos são Main. Além disso, o construtor não pode ter um tipo de retorno de tipo, ex: void.
+
+## Utilizando parâmetros nos construtores
+
+Os construtores podem conter parâmetros, que nesse caso são utilizados para inicializar atributos.
+
+```java
+public class Main {
+    int x;
+
+    public Main(int y) {
+        x = y;
+    }
+
+    public static void main(String[] args) {
+        // Passamos 5 como argumento para o construtor.
+        Main myObject = new Main(5);
+        // Exibe 5 na tela.
+        System.out.println(myObject.x);
+    }
+}
+
+```
+
+Podemos ter quantos parâmetros quisermos, vejamos:
+
+```java
+public class Main {
+    // Atributos
+    int modelYear;
+    String modelName;
+
+    // Construtor
+    public Main(int year, String name) {
+        // Inicializamos nossos atributos com os parâmetros do construtor Main.
+        modelYear = year;
+        modelName = name;
+    }
+
+    public static void main(String[] args) {
+        // Criamos um objeto e logo em seguida, chamamos o nosso construtor e passamos dois argumentos.
+        Main myCar = new Main(1969, 'Mustang');
+        // Imprime 1969 Mustang na tela.
+        System.out.println(myCar.modelYear + " " + myCar.modelName);
+    }
+}
+
+```
