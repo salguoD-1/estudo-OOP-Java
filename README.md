@@ -43,6 +43,8 @@ public class Main {
 }
 ```
 
+Nota: Fazemos uso da palavra-chave new para criar objetos de uma classe.
+
 No exemplo acima criamos um objeto chamado myObject, esse objeto é uma instância(molde) da classe Main, em seguida fazemos uso desse nosso objeto myObject para acessar e exibir o valor da variável x, que nesse caso é 5.
 
 Em resumo, esse nosso objeto(myObject) herda todas as variáveis e métodos da classe Main.
@@ -183,4 +185,34 @@ public class Main {
 ```
 
 Note que no exemplo acima, para acessarmos o método myPublicMethod() foi necessário criar um objeto(instância/molde) da classe Main(contém o método myPublicMethod()) para poder acessar o método. Essa é a grande diferença entre as palavras-chaves public e static.
+
+
+## Método de acesso com um objeto
+
+```java
+public class Main {
+    public void fullThrottle() {
+        System.out.println("O carro está indo o mais rápido possível!")
+    }
+
+    public void speed(int maxSpeed) {
+        System.out.prinln("A velocidade máxima é: " + maxSpeed);
+    }
+
+    public static void main(String[] args) {
+        // Criamos um objeto chamado myCar para acessar os métodos da classe Main.
+        Main myCar = new Main();
+        // Acessando os métodos e passando argumentos.
+        myCar.fullThrottle();
+        myCar.maxSpeed(200);
+    }
+}
+```
+
+O código acima basicamente possui dois métodos dentro da classe Main, fazemos acesso aos métodos através da criação de um objeto(myCar) e acessamos os seus métodos/atributos utilizando a notação dot(.). O resultado é basicamente esse:
+
+```
+O carro está indo o mais rápido possível!
+A velocidade máxima é: 200
+```
 
