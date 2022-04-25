@@ -520,3 +520,88 @@ public class Main {
 O resultado será: Douglas
 
 Primeiro definimos name como sendo "Douglas" através do método setName(newName); e em seguida, acessamos o valor de name através do método getName().
+
+
+# Java Packages(pacotes) & API
+
+Um pacote(package) em java é utilizado para agrupar classes relacionadas. Podemos pensar em um pacote como sendo uma pasta em um determinado diretório de arquivo. Fazemos uso de pacotes para evitar conflitos com nomes e para escrever e manter bons códigos. Nós dividimos pacotes em duas categorias:
+
+* Built-in Packages(São pacotes derivados da API Java), ou seja, pacotes já feitos.
+
+* User-defined- Packages(Nós criamos nossos próprios pacotes).
+
+
+## Built-in Packages
+
+Java API é uma biblioteca de classes já pré-escritas, que são gratuitas para se utilizar.
+
+A biblioteca é dividida entre packages e classes, isso quer dizer que nós podemos importar uma única classe(que contém todos os seus métodos e atributos) ou podemos importar todo um pacote(package) que contém todas as classes pertencentes a esse pacote.
+
+Para importar classes/packages fazemos uso da palavra reservada import, ex:
+
+```java
+// Importa uma única classe
+import package.name.Class;
+
+// Importa todo o pacote(package)
+import package.name.*;
+```
+
+Um exemplo básico seria a classe Scanner, podemos importar ela da seguinte forma:
+
+```java
+// Nos permite utilizar métodos para receber os inputs.
+import java.util.Scanner;
+```
+
+No exemplo acima, java.util é um package(pacote) enquanto que Scanner é uma classe que faz parte do pacote(package) java.util.
+
+
+Para utilizar a classe Scanner nós devemos criar um objeto da classe Scanner e em seguida podemos utilizar os mais diversos métodos que a classe Scanner nos fornece, ex:
+
+```java
+import java.util.Scanner;
+
+public class ScannerClass {
+    public static void main(String[] args) {
+        // Criamos um objeto input da classe Scanner
+        Scanner input = new Scanner(System.in);
+        System.out.print("Digite o seu nome: ");
+
+        String name = input.nextLine();
+        System.out.println("Hello, " + name + "!");
+    }
+}
+```
+
+Note que criamos o objeto input da classe Scanner e em seguida, fazemos uso do método nextLine() que lê uma linha completa de dados.
+
+O resultado:
+
+```
+Hello, Douglas!
+```
+
+## Importando um pacote
+
+Para importar um pacote completo(contendo todas as classes, métodos e atributos) fazemos uso do asterístico no final, ex:
+
+```java
+import java.util.*;
+```
+
+# User-defined Package
+
+Para criar nossos própios pacotes, devemos entender que java faz uso do sistema de diretórios para armazenar nossos dados. Para criar um pacote(package) basta utilizar a palavra reservada package nome_do_pacote;
+
+```java
+package OOP_Tutorial;
+
+class MyPackageClass {
+    public static void main(String[] args) {
+        System.out.println("Esse é o meu pacote!");
+    }
+}
+```
+
+O exemplo acima OOP_Tutorial é o nome da pasta onde estamos armazenando o nosso pacote.
