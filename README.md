@@ -445,3 +445,78 @@ Estudando o dia todo!
 Note que no arquivo Main.java Temos duas classes separadas, é muito importante prestar atenção nas chaves. Na classe Main temos uma classe abstrata e um método abstrato study(); note que o "corpo" dele não possui nada, definimos o corpo dele na classe Student, onde imprimimos "Estudando o dia todo!". 
 
 Já no arquivo Second.java criamos um objeto chamado myObject que herda todos os métodos/atributos da classe Student e Main, logo em seguida utilizamos esse nosso objeto(myObject) para exibir os resultados.
+
+
+# Encapsulation(Encapsulamento)
+
+Basicamente o significado de "Encapsulamento" é: Esconder dados sensíveis do usuário. Para fazer uso do encapsulamento nós devemos:
+
+* Declarar atributos de uma classe como sendo private(privado)
+
+* Fornecer métodos públicos(public) get() e set() para acessar e modificaros valores dos atributos privados.
+
+
+Como vimos anteriormente, atributos/variáveis privadas(private) só podem ser acessadas dentro da classe pertencente. No entanto, podemos fazer uso dos métodos set() e get() para acessar/modificar esses atributos.
+
+* O método get() retorna o valor da variável/atributo.
+
+* O método set() define o valor da variável/atributo.
+
+Vejamos:
+
+```java
+public class Person {
+    // Declaramos a variável/atributo name como sendo privado.
+    private String name;
+
+    // Getter Method
+    public String getName() {
+        return name;
+    }
+
+    // Setter Method
+    // Como não retornamos nada, fazemos uso do void.
+    public void setName(String newName) {
+        this.name = newName;
+    }
+}
+```
+
+No exemplo acima temos que o método getName() retorna o valor da variável/atributo name.
+
+Já o método setName() recebe como argumento uma String, nesse caso vai receber o valor da variável/atributo name. Fazemos uso da palavra-chave this que é usada para referir a um objeto.
+
+Como a variável name é privada(private), nós não podemos criar um objeto e simplesmente usar o a variável/atributo name, por exemplo:
+
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        Person myObject = new Person();
+
+        // Error
+        myObject.name = "Douglas";
+        // Error
+        System.out.println("myObject.name")";
+    }
+}
+```
+
+No exemplo acima estamos tentando acessar uma variável/atributo private, isso irá gerar um erro. Para acessar e definir um valor, fazemos uso dos métodos set() e get(), vejamos:
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        // Criamos um objeto(instância) da classe Person
+        Person myObject = new Person();
+        // Utilizamos o método setName() e passamos "Douglas" como argumento, dessa forma definimos o atributo/variável name como sendo Douglas.
+        myObject.setName("Douglas");
+        // Utilizando o método getName() para acessar o valor da variável/atributo name.
+        System.out.println(myObject.getName());
+    }
+}
+```
+
+O resultado será: Douglas
+
+Primeiro definimos name como sendo "Douglas" através do método setName(newName); e em seguida, acessamos o valor de name através do método getName().

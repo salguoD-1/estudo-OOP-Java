@@ -1,15 +1,10 @@
-abstract class Main {
-    public String first_name = "Douglas";
-    public int age = 22;
-    // Método abstrato
-    public abstract void study();
-}
-
-    // Subclasse herdada da classe Main
-    class Student extends Main {
-        public int graduationYear = 2026;
-        // O "corpo" do método abstrato é fornecido aqui.
-        public void study() {
-            System.out.println("Estudando o dia todo!");
-        }
+public class Main {
+    public static void main(String[] args) {
+        // Criamos um objeto(instância) da classe Person
+        Person myObject = new Person();
+        // Utilizamos o método setName() e passamos "Douglas" como argumento, dessa forma definimos o atributo/variável name como sendo Douglas.
+        myObject.setName("Douglas");
+        // Utilizando o método getName() para acessar o valor da variável/atributo name.
+        System.out.println(myObject.getName());
+    }
 }
