@@ -603,5 +603,6 @@ class MyPackageClass {
     }
 }
 ```
+O pacote deve estar em uma pasta com o mesmo nome do pacote, nesse caso OOP_Tutorial.
 
-O exemplo acima OOP_Tutorial é o nome da pasta onde estamos armazenando o nosso pacote.
+Podemos facilitar a construção de pacotes, mas para isso dê uma olhada nesse tutorial, é bem simples e rápido. [Java Packages](https://www.w3schools.com/java/java_packages.asp).
