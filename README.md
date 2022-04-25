@@ -606,3 +606,63 @@ class MyPackageClass {
 O pacote deve estar em uma pasta com o mesmo nome do pacote, nesse caso OOP_Tutorial.
 
 Podemos facilitar a construção de pacotes, mas para isso dê uma olhada nesse tutorial, é bem simples e rápido. [Java Packages](https://www.w3schools.com/java/java_packages.asp).
+
+
+# Java Inheritance(Herança)
+
+Em Java, é possivel herdar atributos e métodos de outras classes, nós agrupamos esses conceitos da seguinte forma:
+
+* subclass(child):
+    * A classe herda de outra classe.
+
+* superclass(parent):
+    * A classe que está sendo herdada.
+
+Para herdar atributos/métodos de uma classe, fazemos uso da palavra-chave extends.
+
+No exemplo abaixo temos uma superclass(Vehicle) e uma subclass(Car), a subclass Car herda os atributos/métodos da superclass Vehicle, vejamos:
+
+```java
+// Arquivo Vehicle.java
+public class Vehicle {
+    // Note que definos brand como sendo protected, logo apenas subclasses podem acessar esse atributo.
+    protected String brand = "Ford";
+    public void honk() {              
+    System.out.println("Tuut, tuut!");
+  }
+}
+
+// Arquivo Car.java
+
+// Usamos a palavra-chave extends para herdar todos os atributos/métodos da classe Vehicle.
+class Car extends Vehicle {
+    // Definimos modelName como sendo private, logo só pode ser acessado dentro da classe Car.
+    private String modelName = "Mustang";
+    // Função main
+    public static void main(String[] args) {
+    
+    // Criamos um objeto myCar da classe Car.
+    Car myCar = new Car();
+    // Chamamos o método honk() da superclasse Vehicle.
+    myCar.honk();
+
+    // Exibimos o resultado(brand e modelName).
+    System.out.println(myCar.brand + " " + myCar.modelName);
+  }
+}
+```
+
+O resultado:
+
+```
+Tuut, tuut!
+Ford Mustang
+```
+
+Inheritance(herança) é muito últil quando queremos reutilizar atributos/métodos de nossas classes existentes.
+
+Se caso não quisermos que outras classes herdem de nossa superclasse, basta fazer uso do final na frente da classe.
+
+
+# Polymorphism(Polimofirsmo)
+
