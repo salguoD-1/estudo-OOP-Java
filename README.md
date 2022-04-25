@@ -1,3 +1,7 @@
+## Créditos
+
+Todo o material estudado faz parte do curso [Java OOP](https://www.w3schools.com/java/java_oop.asp).
+
 # Programação Orientada a Objetos(POO)
 
 Na programação orientada a objetos nós trabalhamos com os principais conceitos:
