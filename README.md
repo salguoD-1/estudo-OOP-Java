@@ -365,8 +365,83 @@ public class Main {
         myObject.x = 50;
         // Error, não é possivel alterar/modificar o valor do atributo.
         myObject.PI = 25;
-    
+
         System.out.println(myObject.x);
     }
 }
 ```
+
+O programa abaixo faz uso da palavra-chave static, isso significa que podemos acessar os métodos da classe sem precisar criar um objeto da classe.
+
+```java
+public class Main {
+    static void myStaticMethod() {
+        System.out.println("Métodos estáticos podem ser acessados/chamados sem precisar criar um objeto.");
+    }
+
+    public void myPublicMethod() {
+        System.out.println("Métodos públicos só podem ser acessados/chamados quando criamos um objeto da classe.");
+    }
+
+    public static void main(String[] args) {
+        // Método estático
+        myStaticMethod();
+
+        // Método público
+        Main myObject = new Main();
+        myObject.myPublicMethod();
+    }
+}
+```
+
+Exemplo com a palavra-chave abstract. Um método abstrato pertence a uma classe abstrata, logo ela não possui um "corpo". O corpo é fornecido por uma subclasse.
+
+```java
+// Arquivo Main.java
+
+// Classe abstrata Main
+abstract class Main {
+    public String first_name = "Douglas";
+    public int age = 22;
+    // Método abstrato
+    public abstract void study();
+}
+
+    // Subclasse herdada da classe Main
+    class Student extends Main {
+        public int graduationYear = 2026;
+        // O "corpo" do método abstrato é fornecido aqui.
+        public void study() {
+            System.out.println("Estudando o dia todo!");
+        }
+}
+
+    // Arquivo Second.java
+
+    // Criamos uma segunda classe em um novo arquivo chamado Second.java, coloquei tudo junto aqui por questão de espaço mesmo.
+    class Second {
+    public static void main(String[] args) {
+        // Criamos um objeto da classe Student, onde herda todos os atributos/métodos da classe Main.
+        Student myObject = new Student();
+
+        // Acessamos os atributos e métodos da classe Student e Main.
+        System.out.println("Nome: " + myObject.first_name);
+        System.out.println("Idade: " + myObject.age);
+        System.out.println("Ano de graduação: " + myObject.graduationYear);
+        myObject.study();
+    }
+}
+```
+
+Ao executar o arquivo Second.java temos:
+
+```
+Nome: Douglas
+Idade: 22
+Ano de graduação: 2026
+Estudando o dia todo!
+```
+
+Note que no arquivo Main.java Temos duas classes separadas, é muito importante prestar atenção nas chaves. Na classe Main temos uma classe abstrata e um método abstrato study(); note que o "corpo" dele não possui nada, definimos o corpo dele na classe Student, onde imprimimos "Estudando o dia todo!". 
+
+Já no arquivo Second.java criamos um objeto chamado myObject que herda todos os métodos/atributos da classe Student e Main, logo em seguida utilizamos esse nosso objeto(myObject) para exibir os resultados.
