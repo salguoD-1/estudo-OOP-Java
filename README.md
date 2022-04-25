@@ -664,5 +664,55 @@ Inheritance(herança) é muito últil quando queremos reutilizar atributos/méto
 Se caso não quisermos que outras classes herdem de nossa superclasse, basta fazer uso do final na frente da classe.
 
 
-# Polymorphism(Polimofirsmo)
+# Polymorphism(Polimorfismo)
 
+Polimorfismo significa "muitas formas", isso ocorre quando temos muitas classes que estão relacionadas entre sí por herança.
+
+No exemplo anterior estudamos sobre herança, que herdamos atributos e métodos de uma classe. No caso do polimorfismo, nós utilizamos esses métodos para realizar diferentes tarefas. Dessa forma, nós podemos realizar uma única tarefa de maneiras diferentes.
+
+Por exemplo, digamos que temos uma superclasse chamada Animal e essa classe possui um método chamado animalSound(); As subclasses da classe Animal poderiam ser: Pigs, Cats, Dogs, Birds e cada uma dessas subclasses poderia ter a sua própria implementação do método animalSound(). Vejamos no exemplo abaixo.
+
+```java
+// Arquivo Animal.java
+
+public class Animal {
+    public void animalSound() {
+        System.out.println("O animal faz um som");
+    }
+}
+
+// Arquivo Pig.java
+
+class Pig extends Animal{
+    public void animalSound() {
+        System.out.println("O porco diz: wee wee");
+    }
+}
+
+// Arquivo Dog.java
+
+class Dog extends Animal {
+    public void animalSound() {
+        System.out.println("O cachorro diz: bow bow");
+    }
+}
+
+// O arquivo AnimalClass.java
+
+// Nosso método main executa todas as classes/métodos/atributos.
+public class AnimalClass {
+    public static void main(String[] args) {
+        // Criamos 3 objetos, myAnimal da superclasse Animal, myPig e myDog das subclasses Pig e Dog.
+        Animal myAnimal = new Animal();
+        Animal myPig = new Pig();
+        Animal myDog = new Dog();
+
+        // Note que utilizamos o mesmo método da classe Animal, no entanto com valores implementações diferentes, por isso o de "muitas formas".
+        myAnimal.animalSound();
+        myPig.animalSound();
+        myDog.animalSound();
+    }
+}
+```
+
+Bem simples né? Em resumo polimorfismo nos permite realizar implementações de métodos/atributos herdados de forma customizável.
