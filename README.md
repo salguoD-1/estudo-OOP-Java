@@ -159,7 +159,7 @@ No exemplo acima criamos um método chamado myMethod() que está dentro da class
 
 ## Static vs Non-Static
 
-No exemplo acima fizemos uso da palavra-chave static no método myMethod(), ela basicamente permite que acessemos o método sem precisar criar um objeto da classe, o que é diferente da palavra-chave public que necessita de um objeto.
+No exemplo acima fizemos uso da palavra-reservada static no método myMethod(), ela basicamente permite que acessemos o método sem precisar criar um objeto da classe, o que é diferente da palavra-chave public que necessita de um objeto.
 
 ```java
 public class Main {
@@ -290,4 +290,83 @@ public class Main {
     }
 }
 
+```
+
+## Modifiers(Modificadores)
+
+No exemplo acima fazemos uso da palavra-chave public, public é basicamente um modificador de acesso e é utilizado para definir o "nivel" de acesso a classes, atributos, métodos e construtores.
+
+Definimos modificadores em dois grupos:
+
+* Modificador de acesso:
+    * Controla o nível de acesso.
+
+* Modificadores de não acesso:
+    * Não controla o nível de acesso, mas fornece outras funcionalidades.
+
+# Modificadores de Acesso
+
+## Para classes nós podemos utilizar o public ou o default.
+
+* public:
+    * A classe se torna acessivel por outras classes.
+
+* default:
+    * A classe só é acessivel por classes que estejam no mesmo package(pacote). Essa forma é utilizada quando nós não especificamos um modificador. Veremos mais sobre packages mais adiante.
+
+## Para atributos, métodos e construtores podemos utilizar public, private, default e protected.
+
+* public:
+    * O código é acessivel por todas as classes.
+
+* private:
+    O código só é acessivel dentro da classe declarada.
+
+* default:
+    * A classe só é acessivel por classes que estejam no mesmo package(pacote).
+
+* protected:
+    * O código é acessivel no mesmo package(pacote) e nas subclasses. Veremos mais sobre subclasses mais adiante.
+
+
+# Modificadores de não acesso
+
+## Para classes podemos utilizar tanto o final como o abstract
+
+* final:
+    * A classe não pode ser herdada por outra classe. Veremos mais sobre inheritance(herança) mais adiante.
+
+* abstract:
+    * A classe não pode ser utilizada para criar objetos. Para acessar uma classe abstrata ela deve ser herdada por outra classe. Veremos mais sobre inheritance e abstraction mais adiante.
+
+## Para atributos e métodos podemos utilizar final, static e abstract
+
+* final:
+    * Os atributos e métodos não podem ser modificados.
+
+* static:
+    * Os atributos e métodos pertencem a classe, e não a objetos.
+
+* abstract:
+    * Só podem ser utilizados em classes abstratas e só podem ser utilizados em métodos. O método em sí não possui um "corpo", por exemplo: abstract void run(); O corpo é fornecido por subclasses que são herdadas.
+
+
+O programa abaixo faz uso da palavra-chave final, dessa forma nossos atributos não podem ser modificados.
+
+```java
+public class Main {
+    final int x = 10;
+    final double PI = 3.14;
+
+    public static void main(String[] args) {
+        Main myObject = new Main();
+
+        // Error, não é possivel alterar/modificar o valor do atributo.
+        myObject.x = 50;
+        // Error, não é possivel alterar/modificar o valor do atributo.
+        myObject.PI = 25;
+    
+        System.out.println(myObject.x);
+    }
+}
 ```
